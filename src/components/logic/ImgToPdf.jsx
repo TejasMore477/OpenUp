@@ -282,8 +282,8 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
             disabled={!canShowActions}
             className={`group relative px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 ${
               canShowActions
-                ? "bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-600 shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40"
-                : "bg-gray-600/50 cursor-not-allowed"
+                ? "bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/20 border border-blue-500/20"
+                : "bg-gray-600/30 cursor-not-allowed border border-gray-500/10"
             }`}
           >
             <span className="flex items-center gap-2">
@@ -294,7 +294,7 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
               Preview PDF
             </span>
             {canShowActions && (
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-shimmer"></div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-shimmer"></div>
             )}
           </button>
 
@@ -304,8 +304,8 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
             disabled={!canShowActions}
             className={`group relative px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 ${
               canShowActions
-                ? "bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 shadow-lg shadow-green-500/20 hover:shadow-green-500/40"
-                : "bg-gray-600/50 cursor-not-allowed"
+                ? "bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 shadow-lg shadow-green-500/5 hover:shadow-green-500/10 border border-green-500/10"
+                : "bg-gray-600/30 cursor-not-allowed border border-gray-500/10"
             }`}
           >
             <span className="flex items-center gap-2">
@@ -315,7 +315,7 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
               Download PDF
             </span>
             {canShowActions && (
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-green-500/0 via-green-500/20 to-green-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-shimmer"></div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-green-500/0 via-green-500/5 to-green-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-shimmer"></div>
             )}
           </button>
 
@@ -325,8 +325,8 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
             disabled={images.length === 0}
             className={`group relative px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 ${
               images.length > 0
-                ? "bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-600 shadow-lg shadow-red-500/20 hover:shadow-red-500/40"
-                : "bg-gray-600/50 cursor-not-allowed"
+                ? "bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 shadow-lg shadow-red-500/5 hover:shadow-red-500/10 border border-red-500/10"
+                : "bg-gray-600/30 cursor-not-allowed border border-gray-500/10"
             }`}
           >
             <span className="flex items-center gap-2">
@@ -336,7 +336,7 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
               Clear All
             </span>
             {images.length > 0 && (
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-500/0 via-red-500/20 to-red-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-shimmer"></div>
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-red-600/10 via-red-600/50 to-red-600/10 opacity-50 group-hover:opacity-100 transition-opacity duration-300 -z-10 animate-shimmer"></div>
             )}
           </button>
         </div>
