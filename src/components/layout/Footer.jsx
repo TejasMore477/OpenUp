@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="w-full h-[55vh] bg-royalAmethyst bg-opacity-80 text-darkTheme py-8 rounded-t-3xl font-Syncopate">
+    <footer className="w-full h-[55vh] bg-royalAmethyst text-darkTheme py-8 rounded-t-3xl font-Syncopate">
       <div className="max-w-screen-2xl mx-auto text-center">
         <p className="leading-none font-semibold mb-6 text-zinc-300">
           CREATE SAFE PDF WITH
