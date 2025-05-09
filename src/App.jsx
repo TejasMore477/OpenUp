@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setIsLoading(false);
-    }, 2500); 
+    }, 2500);
 
     return () => clearTimeout(timeout);
   }, []);
@@ -54,14 +54,16 @@ function App() {
     <div className='bg-darkTheme min-h-screen'>
       <Header />
       <main className='container mx-auto px-4 py-8'>
-        {/* <Landing /> */}
-        <ImgToPdf 
-          onImagesChange={setImages}
-          images={images}
-        />
+        <Landing />
+        {/* Converter Section */}
+        <div className="backdrop-blur-sm bg-white/5 rounded-xl p-8 border border-white/20">
+          <ImgToPdf onImagesChange={setImages}
+            images={images} />
+        </div>
+
         {images.length > 0 && (
           <div className="mt-8">
-            <Thumbnails 
+            <Thumbnails
               images={images}
               onRotate={handleRotate}
               onRemove={handleRemove}
@@ -70,6 +72,7 @@ function App() {
             {/* <Counter count={images.length} /> */}
           </div>
         )}
+
       </main>
       <Footer />
     </div>
