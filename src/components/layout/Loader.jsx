@@ -13,13 +13,15 @@ function Loader() {
       <div
         role="status"
         aria-live="polite"
-        className="bg-darkTheme max-w-screen-2xl mx-auto h-screen overflow-hidden grid place-content-center"
+        className="bg-darkTheme w-full min-h-screen overflow-hidden grid place-content-center px-4 sm:px-6 md:px-8"
       >
-        <h1 className=" px-[70px] text-limicMist font-extrabold text-[3vw] font-Syncopate tracking-tighter leading-tight">
-          OpenUp
-        </h1>
-        <div className="flex items-center justify-center mt-[-5px]  text-limicMist pl-[2px] font-light text-[1vw] font-Syncopate tracking-tighter">
-          <p className="pr-[8px]">Loading</p> <Counter /> <p>%</p>
+        <div className="text-center">
+          <h1 className="text-limicMist font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-Syncopate tracking-tighter leading-tight">
+            OpenUp
+          </h1>
+          <div className="flex items-center justify-center mt-2 sm:mt-3 md:mt-4 text-limicMist font-light text-sm sm:text-base md:text-lg lg:text-xl font-Syncopate tracking-tighter">
+            <p className="pr-2">Loading</p> <Counter /> <p>%</p>
+          </div>
         </div>
       </div>
     </motion.div>

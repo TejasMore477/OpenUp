@@ -1,14 +1,21 @@
-import { animate, motion, useMotionValue, useTransform } from "motion/react"
-import { useEffect } from "react"
+import { animate, motion, useMotionValue, useTransform } from "motion/react";
+import { useEffect } from "react";
 
-export default function HTMLContent() {
-    const count = useMotionValue(0)
-    const rounded = useTransform(() => Math.round(count.get()))
+export default function Counter() {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (value) => Math.round(value));
 
-    useEffect(() => {
-        const controls = animate(count, 100, { duration: 2 })
-        return () => controls.stop()
-    }, []);
+  useEffect(() => {
+    const controls = animate(count, 100, {
+      duration: 2,
+      ease: "easeOut",
+    });
+    return () => controls.stop();
+  }, []);
 
-    return <motion.pre className="text-limicMist font-light text-[1.3vw] font-Syncopate tracking-tighter w-[40px]">{rounded}</motion.pre>
-};
+  return (
+    <motion.span className="text-limicMist font-light text-sm sm:text-base md:text-lg lg:text-xl font-Syncopate tracking-tighter inline-block min-w-[2.5rem] text-center">
+      {rounded}
+    </motion.span>
+  );
+}
