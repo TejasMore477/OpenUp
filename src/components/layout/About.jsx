@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const scrollToFeatures = (e) => {
     e.preventDefault();
     const featuresSection = document.getElementById('features');
@@ -49,7 +53,7 @@ function About() {
   ];
 
   return (
-    <div id="about" className="min-h-screen bg-gradient-to-br from-darkTheme via-slate-900 to-darkTheme">
+    <div id="about" className="min-h-screen bg-gradient-to-br font-Syncopate from-darkTheme via-slate-900 to-darkTheme">
       <section className="relative py-20 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -57,15 +61,15 @@ function About() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
               About Me
             </h1>
-            <p className="text-xl text-gray-300 animate-fade-in-delay">
+            <p className="text-sm text-gray-300 animate-fade-in-delay">
               A computer science student passionate about creating secure and efficient solutions
             </p>
           </div>
 
           {/* Mission Statement */}
           <div className="backdrop-blur-sm bg-white/5 rounded-xl p-8 border border-white/20 transition-all duration-300 mb-12">
-            <h2 className="text-2xl font-semibold text-white mb-4">My Mission</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <h2 className="text-lg font-semibold text-white mb-4">My Mission</h2>
+            <p className="text-gray-300 text-sm leading-relaxed">
               I'm dedicated to providing a secure, efficient, and user-friendly solution for converting images to PDFs. 
               My commitment to privacy and local processing ensures your data never leaves your device.
             </p>
@@ -81,10 +85,10 @@ function About() {
                 <div className="text-blue-400 mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-lg font-semibold text-white mb-3">
                   {value.title}
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-sm">
                   {value.description}
                 </p>
               </div>
@@ -93,15 +97,15 @@ function About() {
 
           {/* Personal Section */}
           <div className="backdrop-blur-sm bg-white/5 rounded-xl p-8 border border-white/20 transition-all duration-300">
-            <h2 className="text-2xl font-semibold text-white mb-6">My Journey</h2>
-            <p className="text-gray-300 leading-relaxed mb-6">
+            <h2 className="text-lg font-semibold text-white mb-6">My Journey</h2>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6">
               As a computer science student, I'm passionate about web development and creating tools that make a difference. 
               This project combines my interest in security, user experience, and practical problem-solving. 
               I'm constantly learning and improving my skills to create better solutions.
             </p>
             <a 
               href="mailto:tejasmore477@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 text-white rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10 border border-blue-500/10"
+              className="text-sm inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 text-white rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10 border border-blue-500/10"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
