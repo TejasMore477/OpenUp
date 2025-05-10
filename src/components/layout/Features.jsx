@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Features() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const features = [
     {
       title: "Secure Processing",
@@ -45,7 +49,7 @@ function Features() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-darkTheme via-slate-900 to-darkTheme">
+    <div className="min-h-screen bg-gradient-to-br from-darkTheme via-slate-900 to-darkTheme font-Syncopate">
       <section className="relative py-20 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
@@ -53,7 +57,7 @@ function Features() {
             <h1 className="text-4xl md:text-5xl font-bold text-limicMist mb-6 animate-fade-in">
               Features
             </h1>
-            <p className="text-xl text-softVoilet animate-fade-in-delay">
+            <p className="text-softVoilet animate-fade-in-delay text-sm">
               Discover what makes my PDF converter special
             </p>
           </div>
@@ -68,10 +72,10 @@ function Features() {
                 <div className="text-limicMist mb-6">
                   {feature.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-limicMist mb-4">
+                <h3 className="text-lg font-semibold text-limicMist mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-softVoilet mb-4">
+                <p className="text-softVoilet mb-4 text-sm">
                   {feature.description}
                 </p>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -83,8 +87,8 @@ function Features() {
 
           {/* Additional Info */}
           <div className="mt-16 backdrop-blur-sm bg-white/5 rounded-xl p-8 border border-royalAmethyst/20">
-            <h2 className="text-2xl font-semibold text-limicMist mb-4">Ready to Get Started?</h2>
-            <p className="text-softVoilet mb-6">
+            <h2 className="text-lg font-semibold text-limicMist mb-4">Ready to Get Started?</h2>
+            <p className="text-softVoilet mb-6 text-sm">
               Try out my PDF converter today. No sign-up required, 
               just upload your images and convert them to PDF instantly.
             </p>
@@ -100,7 +104,7 @@ function Features() {
               </a>
               <a 
                 href="mailto:tejasmore477@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 text-white rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10 border border-blue-500/10"
+                className="text-sm inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 text-white rounded-lg transition-all duration-300 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10 border border-blue-500/10"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
