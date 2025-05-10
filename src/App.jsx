@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
@@ -7,17 +8,16 @@ import ImgToPdf from './components/logic/ImgToPdf';
 import ImageThumbnail from './components/logic/ImageThumbnail';
 import Counter from './components/common/Counter';
 import Thumbnails from './components/common/Thumbnails';
+import About from './components/layout/About';
+import Features from './components/layout/Features';
+import PrivacyPolicy from './components/layout/PrivacyPolicy';
+import TermsOfService from './components/layout/TermsOfService';
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
+function Home() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-
-    return () => clearTimeout(timeout);
+    window.scrollTo(0, 0);
   }, []);
 
   const handleRotate = useCallback((index) => {
@@ -46,36 +46,59 @@ function App() {
     });
   }, []);
 
+  return (
+    <>
+      <Landing />
+      {/* Converter Section */}
+      <div className="backdrop-blur-sm bg-white/5 rounded-xl p-8 border border-white/20">
+        <ImgToPdf onImagesChange={setImages} images={images} />
+      </div>
+
+      {images.length > 0 && (
+        <div className="mt-8">
+          <Thumbnails
+            images={images}
+            onRotate={handleRotate}
+            onRemove={handleRemove}
+            onCaptionChange={handleCaptionChange}
+          />
+        </div>
+      )}
+    </>
+  );
+}
+
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   if (isLoading) {
     return <Loader />;
   }
 
   return (
-    <div className='bg-darkTheme min-h-screen'>
-      <Header />
-      <main className='container mx-auto px-4 py-8'>
-        <Landing />
-        {/* Converter Section */}
-        <div className="backdrop-blur-sm bg-white/5 rounded-xl p-8 border border-white/20">
-          <ImgToPdf onImagesChange={setImages}
-            images={images} />
-        </div>
-
-        {images.length > 0 && (
-          <div className="mt-8">
-            <Thumbnails
-              images={images}
-              onRotate={handleRotate}
-              onRemove={handleRemove}
-              onCaptionChange={handleCaptionChange}
-            />
-            {/* <Counter count={images.length} /> */}
-          </div>
-        )}
-
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className='bg-darkTheme min-h-screen'>
+        <Header />
+        <main className='container mx-auto px-4 py-8'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

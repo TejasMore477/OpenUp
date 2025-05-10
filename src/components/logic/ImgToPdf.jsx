@@ -177,7 +177,7 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Left Column - Upload Section */}
           <div className="flex-1">
-            <div className="backdrop-blur-sm bg-white/5 rounded-lg p-6 border-2 border-dashed border-white/20 hover:border-blue-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/20">
+            <div className="backdrop-blur-sm bg-grey-950/5 rounded-lg p-6 border-2 border-dashed border-white/20 hover:border-blue-400 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/20">
               <label className="flex flex-col items-center justify-center cursor-pointer group">
                 <div className="text-center">
                   <svg className="mx-auto h-12 w-12 text-gray-300 group-hover:text-blue-400 transition-colors duration-300" stroke="currentColor" fill="none" viewBox="0 0 48 48">
@@ -205,7 +205,7 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
 
           {/* Right Column - PDF Options */}
           <div className="flex-1 space-y-6">
-            <div className="backdrop-blur-sm bg-white/5 rounded-lg p-6 border border-white/20">
+            <div className="backdrop-blur-sm bg-gray-950/5 rounded-lg p-6 border border-white/20">
               <h3 className="text-lg font-semibold text-white mb-4">PDF Settings</h3>
               
               <div className="space-y-4">
@@ -282,7 +282,7 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
             disabled={!canShowActions}
             className={`group relative px-6 py-3 rounded-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 ${
               canShowActions
-                ? "bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/20 border border-blue-500/20"
+                ? "bg-gradient-to-r from-slate-700/90 to-slate-600/90 hover:from-slate-600/90 hover:to-slate-700/90 shadow-lg shadow-blue-500/5 hover:shadow-blue-500/10 border border-blue-500/10"
                 : "bg-gray-600/30 cursor-not-allowed border border-gray-500/10"
             }`}
           >
