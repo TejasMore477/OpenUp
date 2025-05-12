@@ -175,6 +175,9 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
 
   const canShowActions = images && images.length >= MIN_IMAGES;
 
+  console.log("canshowaAction____",canShowActions);
+  console.log("images____",MIN_IMAGES);
+
   return (
     <div className="w-full max-w-6xl mx-auto sm:px-4 sm:py-8">
       {isLoading && (
