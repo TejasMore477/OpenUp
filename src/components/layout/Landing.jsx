@@ -20,7 +20,9 @@ const Step = memo(({ number, title, description, color }) => (
     >
       <span className={`text-${color}-400 font-bold`}>{number}</span>
     </div>
-    <h3 className="text-white font-Syncopate leading-none font-semibold sm:mb-2">{title}</h3>
+    <h3 className="text-white font-Syncopate leading-none font-semibold sm:mb-2">
+      {title}
+    </h3>
     <p className="text-gray-300 text-xs sm:text-sm">{description}</p>
   </div>
 ));
@@ -29,15 +31,28 @@ const Step = memo(({ number, title, description, color }) => (
 const HeroSection = memo(() => (
   <div className="text-center mb-16">
     <h1 className="font-Syncopate text-2xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
-      Transform Images to PDF
+      Free Image to PDF Converter
       <span className="block text-sm md:text-xl text-blue-400 mt-2">
-        Securely & Instantly
+        Convert JPG, PNG, WEBP to PDF Instantly
       </span>
     </h1>
     <p className="text-sm sm:text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in-delay">
-      Your trusted solution for converting images to professional PDFs. No
-      server storage, no data retention, just pure conversion.
+      Transform your images into professional PDFs with our secure,
+      browser-based converter. No sign-up required, no server storage, and 100%
+      free. Perfect for documents, photos, and presentations.
     </p>
+    <div className="mt-8 space-y-4">
+      <h2 className="text-xl font-semibold text-white">
+        Why Choose Our Image to PDF Converter?
+      </h2>
+      <ul className="text-sm text-gray-300 space-y-2">
+        <li>✓ 100% Secure - All processing happens in your browser</li>
+        <li>✓ Free to Use - No hidden charges or subscriptions</li>
+        <li>✓ Multiple Formats - Support for JPG, PNG, WEBP, and more</li>
+        <li>✓ Instant Conversion - No waiting time or upload delays</li>
+        <li>✓ No Registration - Start converting immediately</li>
+      </ul>
+    </div>
   </div>
 ));
 
