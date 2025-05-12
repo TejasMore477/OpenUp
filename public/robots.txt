@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: https://openup-pdf.com/sitemap.xml
+
+# Allow all crawlers
+Disallow:
+
+# Allow all paths
+Allow: /* 
