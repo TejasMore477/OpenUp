@@ -47,7 +47,7 @@ function Home() {
   return (
     <div className="flex flex-col-reverse sm:flex-col items-center justify-center">
       <Landing />
-      <div>
+      <div className="w-full">
         {/* Converter Section */}
         <div className="sm:backdrop-blur-sm sm:bg-white/5 rounded-xl sm:p-8 sm:border sm:border-white/20">
           <ImgToPdf onImagesChange={setImages} images={images} />

@@ -61,48 +61,6 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
     [onImagesChange]
   );
 
-  const handleRotate = useCallback(
-    (index) => {
-      onImagesChange((prev) => {
-        const newImages = prev.map((img, i) =>
-          i === index ? { ...img, rotation: (img.rotation + 90) % 360 } : img
-        );
-        return newImages;
-      });
-    },
-    [onImagesChange]
-  );
-
-  const handleRemove = useCallback(
-    (index) => {
-      onImagesChange((prev) => {
-        const newImages = prev.filter((_, i) => i !== index);
-        return newImages;
-      });
-    },
-    [onImagesChange]
-  );
-
-  const debouncedCaptionChange = useMemo(
-    () =>
-      debounce((index, caption) => {
-        onImagesChange((prev) => {
-          const newImages = prev.map((img, i) =>
-            i === index ? { ...img, caption } : img
-          );
-          return newImages;
-        });
-      }, 300),
-    [onImagesChange]
-  );
-
-  const handleCaptionChange = useCallback(
-    (index, caption) => {
-      debouncedCaptionChange(index, caption);
-    },
-    [debouncedCaptionChange]
-  );
-
   const previewPDF = useCallback(async () => {
     if (!images || images.length < MIN_IMAGES) {
       setError(`Please upload at least ${MIN_IMAGES} images`);
@@ -163,11 +121,20 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
   );
 
   const handlePdfOptionChange = useCallback(
-    (field, value) => {
+  (field, value) => {
+    if (field === "title") {
+      // Immediate update for title to avoid lag
+      setPdfOptions((prev) => ({
+        ...prev,
+        [field]: value,
+      }));
+    } else {
+      // Debounced update for other fields
       debouncedPdfOptionChange(field, value);
-    },
-    [debouncedPdfOptionChange]
-  );
+    }
+  },
+  [debouncedPdfOptionChange]
+);
 
   useEffect(() => {
     renderCount.current += 1;
@@ -175,19 +142,19 @@ const ImgToPdf = ({ onImagesChange, images = [] }) => {
 
   const canShowActions = images && images.length >= MIN_IMAGES;
 
-  console.log("canshowaAction____",canShowActions);
-  console.log("images____",MIN_IMAGES);
+  // console.log("canshowaAction____",canShowActions);
+  // console.log("images____",MIN_IMAGES);
 
   return (
-    <div className="w-full max-w-6xl mx-auto sm:px-4 sm:py-8">
+    <div className="w-full max-w-6xl mx-auto sm:p-3">
       {isLoading && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
           <Loading />
         </div>
       )}
 
-      <div className="sm:backdrop-blur-md sm:bg-white/10 rounded-xl shadow-2xl sm:p-6 py-10 sm:py-0 mb-8 sm:border border-white/20">
-        <div className="text-center mt-2 sm:mt-0 mb-8">
+      <div className="sm:backdrop-blur-md sm:bg-white/5 rounded-xl shadow-2xl sm:px-10 py-10  mb-8 sm:mb-0 sm:border border-white/20">
+        <div className="text-center mt-2 sm:mt-0 mb-8 sm:mb-4">
           <h2 className="text-3xl font-bold text-white mb-2 animate-fade-in">
             Convert Images to PDF
           </h2>
